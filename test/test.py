@@ -9,19 +9,19 @@ async def test_project(dut):
     dut._log.info("Start")
 
     # Set the clock period to 10 us (100 KHz)
-    clock = Clock(dut.i_clk, 10, units="us")
+    clock = Clock(dut.clk, 10, units="us")
     cocotb.start_soon(clock.start())
 
     # Reset
     dut._log.info("Reset")
-    dut.i_rstn.value = 0
+    dut.rst_n.value = 0
     dut.i_8xframe.value = 0
     dut.i_valid.value = 0
     dut.i_last.value = 0
     dut.i_corrupt.value = 0
-    await ClockCycles(dut.i_clk, 10)
-    dut.i_rstn.value = 1
-    await RisingEdge(dut.i_clk)
+    await ClockCycles(dut.clk, 10)
+    dut.rst_n.value = 1
+    await RisingEdge(dut.clk)
 
     dut._log.info("Test CRC_core behavior (currently empty stub)")
 
@@ -41,16 +41,16 @@ async def test_project(dut):
     dut.i_valid.value = 1
     dut.i_last.value = 0
     dut.i_corrupt.value = 0
-    await ClockCycles(dut.i_clk, 2)
+    await ClockCycles(dut.clk, 2)
 
     # End of frame
     dut.i_last.value = 1
-    await ClockCycles(dut.i_clk, 1)
+    await ClockCycles(dut.clk, 1)
 
     # Deassert valid
     dut.i_valid.value = 0
     dut.i_last.value = 0
-    await ClockCycles(dut.i_clk, 2)
+    await ClockCycles(dut.clk, 2)
 
     # Basic structural assertions
     assert len(dut.o_crc.value.binstr) == 32, "o_crc should be 32 bits wide"

@@ -2,8 +2,13 @@
 
 # UWASIC W26: FCS Engine
 
-- Clone this repository and update info.yaml 
-- [Read the documentation here](docs/info.md)
+## Getting Started
+
+1. Clone this repository
+2. Update [info.yaml](info.yaml) with your project details
+3. Make a post in the [UWASIC Discord server](https://discord.gg/ZcfXmCkV) under **#onboarding/posts** to kick things off!
+4. [Read the full documentation and specifications here](https://docs.uwasic.com/doc/crc32-engine-1nPI6NYk4L)
+
 ## Disclaimer
 
 The final implementation will be integrated into an FPGA fabric of a larger SoC. This TinyTapeout template serves as a trackable starting point for initial prototyping and team training purposes.
@@ -32,7 +37,7 @@ This template design has a two-level hierarchy:
 
 ## Resources
 
-- [Documentation](https://tinytapeout.com/faq/)
+- [Documentation](https://docs.uwasic.com/doc/crc32-engine-1nPI6NYk4L)
 - [An interesting insight on implementing CRC math onto hardware](https://youtu.be/sNkERQlK8j8?si=1aVVNF5dmEeVRrsh)
 - [CRC calculator](https://crccalc.com/?crc=123456789&method=&datatype=ascii&outtype=hex)
 - [UWASIC discord server](https://discord.gg/ZcfXmCkV)

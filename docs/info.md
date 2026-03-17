@@ -23,8 +23,8 @@ Annotate your weekly progress here to help us keep on track! For each week, brie
 
 | Week | Notes |
 |---|---|
-| March 4-10 | |
-| March 11-17 | |
+| March 4-10 | Researched implementation, decided to use combination of LUT (for CRC value/remainder lookup) and LSR |
+| March 11-17 | LUT table generation |
 | March 18-24 | |
 | March 25 - Apr 1 | |
 | April 1+ | |
@@ -33,12 +33,11 @@ Annotate your weekly progress here to help us keep on track! For each week, brie
 
 | Week | Notes |
 |---|---|
-| March 4-10 | |
+| March 4-10 | Wrote brief test cases to validate CRC functionality - that we are computing the correct CRC value|
 | March 11-17 | |
 | March 18-24 | |
 | March 25 - Apr 1 | |
 | April 1+ | |
 
 ## Other Comments
-
-- 
+Reflected LUT Implementation mentioned here: https://github.com/Michaelangel007/crc32
